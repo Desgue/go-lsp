@@ -18,15 +18,15 @@ func Test_EncodeMessage(t *testing.T) {
 func Test_DecodeMessage(t *testing.T) {
 	lengthExpected := 15
 	methodExpected := "hi"
-	acturalMethod, actualLength, err := DecodeMessage([]byte("Content-Length: 15\r\n\r\n{\"method\":\"hi\"}"))
-
+	method, content, err := DecodeMessage([]byte("Content-Length: 15\r\n\r\n{\"method\":\"hi\"}"))
+	contentLength := len(content)
 	if err != nil {
 		t.Errorf("Error: %s", err)
 	}
-	if acturalMethod != methodExpected {
-		t.Errorf("Expected %s, got %s", methodExpected, acturalMethod)
+	if method != methodExpected {
+		t.Errorf("Expected %s, got %s", methodExpected, method)
 	}
-	if actualLength != lengthExpected {
-		t.Errorf("Expected %d, got %d", lengthExpected, actualLength)
+	if contentLength != lengthExpected {
+		t.Errorf("Expected %d, got %d", lengthExpected, contentLength)
 	}
 }
