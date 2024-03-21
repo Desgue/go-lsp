@@ -1,0 +1,5 @@
+[golsp]2024/03/21 13:46:12 main.go:15: Starting LSP
+[golsp]2024/03/21 13:46:15 main.go:20: Error: did not find the separator
+[golsp]2024/03/21 13:46:29 main.go:20: Error: did not find the separator
+[golsp]2024/03/21 13:46:40 main.go:20: Error: did not find the separator
+[golsp]2024/03/21 13:47:31 main.go:20: Error: did not find the separator
