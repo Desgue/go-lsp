@@ -1,8 +1,17 @@
 package main
 
-import "github.com/Desgue/go-lsp/rpc"
+import (
+	"bufio"
+	"os"
+)
 
 func main() {
-	rpc.DecodeMessage([]byte("Content-Length: 15\r\n\r\n{\"method\":\"hi\"}"))
+	scanner := bufio.NewScanner(os.Stdin)
+
+	for scanner.Scan() {
+		print("\nmesage: ", scanner.Text(), "\n")
+	}
 
 }
+
+//type SplitFunc func(data []byte, atEOF bool) (advance int, token []byte, err error)
